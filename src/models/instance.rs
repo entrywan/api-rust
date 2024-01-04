@@ -31,13 +31,13 @@ pub struct Instance {
     pub location: Option<Location>,
     /// Instance CPU cores
     #[serde(rename = "cpus", skip_serializing_if = "Option::is_none")]
-    pub cpus: Option<crate::models::Int>,
+    pub cpus: Option<i32>,
     /// Instance memory in gigabytes (GB)
     #[serde(rename = "ram", skip_serializing_if = "Option::is_none")]
-    pub ram: Option<crate::models::Int>,
+    pub ram: Option<i32>,
     /// Instance hard drive size in gigabytes (GB)
     #[serde(rename = "disk", skip_serializing_if = "Option::is_none")]
-    pub disk: Option<crate::models::Int>,
+    pub disk: Option<i32>,
 }
 
 impl Instance {
