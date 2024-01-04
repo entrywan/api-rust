@@ -78,7 +78,7 @@ pub async fn tag_id_get(configuration: &configuration::Configuration, id: &str) 
 }
 
 /// Removes tags from a resource
-pub async fn tag_id_patch(configuration: &configuration::Configuration, id: &str, tag: crate::models::Tag) -> Result<::std::collections::HashMap<String, String>, Error<TagIdPatchError>> {
+pub async fn tag_id_patch(configuration: &configuration::Configuration, id: &str, tag: std::collections::HashMap<String, String>) -> Result<::std::collections::HashMap<String, String>, Error<TagIdPatchError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -110,7 +110,7 @@ pub async fn tag_id_patch(configuration: &configuration::Configuration, id: &str
 }
 
 /// Adds tags to a resource
-pub async fn tag_id_put(configuration: &configuration::Configuration, id: &str, tag: crate::models::Tag) -> Result<::std::collections::HashMap<String, String>, Error<TagIdPutError>> {
+pub async fn tag_id_put(configuration: &configuration::Configuration, id: &str, tag: std::collections::HashMap<String, String>) -> Result<::std::collections::HashMap<String, String>, Error<TagIdPutError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
