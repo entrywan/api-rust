@@ -66,7 +66,7 @@ Name | Type | Description  | Required | Notes
 
 ## loadbalancer_id_put
 
-> loadbalancer_id_put(id)
+> loadbalancer_id_put(id, loadbalancer_id_put_request)
 Update load balancer targets
 
 ### Parameters
@@ -75,6 +75,7 @@ Update load balancer targets
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **uuid::Uuid** | Load balancer ID | [required] |
+**loadbalancer_id_put_request** | [**LoadbalancerIdPutRequest**](LoadbalancerIdPutRequest.md) |  | [required] |
 
 ### Return type
 
@@ -86,7 +87,7 @@ Name | Type | Description  | Required | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

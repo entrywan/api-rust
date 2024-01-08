@@ -75,9 +75,9 @@ Class | Method | HTTP request | Description
 *LoadBalancerApi* | [**loadbalancer_id_delete**](docs/LoadBalancerApi.md#loadbalancer_id_delete) | **DELETE** /loadbalancer/{id} | Delete load balancer
 *LoadBalancerApi* | [**loadbalancer_id_put**](docs/LoadBalancerApi.md#loadbalancer_id_put) | **PUT** /loadbalancer/{id} | Update load balancer targets
 *LoadBalancerApi* | [**loadbalancer_post**](docs/LoadBalancerApi.md#loadbalancer_post) | **POST** /loadbalancer | Create a load balancer
-*SsHkeyApi* | [**sshkey_get**](docs/SsHkeyApi.md#sshkey_get) | **GET** /sshkey | List SSH keys
-*SsHkeyApi* | [**sshkey_id_delete**](docs/SsHkeyApi.md#sshkey_id_delete) | **DELETE** /sshkey/{id} | Delete SSH key
-*SsHkeyApi* | [**sshkey_post**](docs/SsHkeyApi.md#sshkey_post) | **POST** /sshkey | Create SSH key
+*SshkeyApi* | [**sshkey_get**](docs/SshkeyApi.md#sshkey_get) | **GET** /sshkey | List SSH keys
+*SshkeyApi* | [**sshkey_id_delete**](docs/SshkeyApi.md#sshkey_id_delete) | **DELETE** /sshkey/{id} | Delete SSH key
+*SshkeyApi* | [**sshkey_post**](docs/SshkeyApi.md#sshkey_post) | **POST** /sshkey | Create SSH key
 *TagApi* | [**tag_id_get**](docs/TagApi.md#tag_id_get) | **GET** /tag/{id} | Get tags for a resource ID
 *TagApi* | [**tag_id_patch**](docs/TagApi.md#tag_id_patch) | **PATCH** /tag/{id} | Removes tags for a resource ID
 *TagApi* | [**tag_id_put**](docs/TagApi.md#tag_id_put) | **PUT** /tag/{id} | Set tags for a resource ID
@@ -100,10 +100,12 @@ Class | Method | HTTP request | Description
  - [InstancePost200Response](docs/InstancePost200Response.md)
  - [InstancePostRequest](docs/InstancePostRequest.md)
  - [LoadBalancer](docs/LoadBalancer.md)
+ - [LoadbalancerIdPutRequest](docs/LoadbalancerIdPutRequest.md)
  - [LoadbalancerPostRequest](docs/LoadbalancerPostRequest.md)
  - [LoadbalancerPostRequestListenersInner](docs/LoadbalancerPostRequestListenersInner.md)
  - [LoadbalancerPostRequestListenersInnerTargetsInner](docs/LoadbalancerPostRequestListenersInnerTargetsInner.md)
- - [SsHkey](docs/SsHkey.md)
+ - [Sshkey](docs/Sshkey.md)
+ - [SshkeyPost200Response](docs/SshkeyPost200Response.md)
  - [SshkeyPostRequest](docs/SshkeyPostRequest.md)
  - [Vpc](docs/Vpc.md)
  - [VpcIdPatchRequest](docs/VpcIdPatchRequest.md)
