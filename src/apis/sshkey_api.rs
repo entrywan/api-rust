@@ -45,7 +45,7 @@ pub enum SshkeyPostError {
 
 
 /// List SSH keys
-pub async fn sshkey_get(configuration: &configuration::Configuration, ) -> Result<Vec<crate::models::SsHkey>, Error<SshkeyGetError>> {
+pub async fn sshkey_get(configuration: &configuration::Configuration, ) -> Result<Vec<crate::models::Sshkey>, Error<SshkeyGetError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -105,7 +105,7 @@ pub async fn sshkey_id_delete(configuration: &configuration::Configuration, id: 
     }
 }
 
-pub async fn sshkey_post(configuration: &configuration::Configuration, sshkey_post_request: crate::models::SshkeyPostRequest) -> Result<(), Error<SshkeyPostError>> {
+pub async fn sshkey_post(configuration: &configuration::Configuration, sshkey_post_request: crate::models::SshkeyPostRequest) -> Result<crate::models::SshkeyPost200Response, Error<SshkeyPostError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -128,7 +128,7 @@ pub async fn sshkey_post(configuration: &configuration::Configuration, sshkey_po
     let local_var_content = local_var_resp.text().await?;
 
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        Ok(())
+        serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
         let local_var_entity: Option<SshkeyPostError> = serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent { status: local_var_status, content: local_var_content, entity: local_var_entity };

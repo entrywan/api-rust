@@ -12,59 +12,17 @@
 
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
-pub struct SsHkey {
+pub struct SshkeyPost200Response {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<uuid::Uuid>,
-    /// SSH key account owner
-    #[serde(rename = "account", skip_serializing_if = "Option::is_none")]
-    pub account: Option<uuid::Uuid>,
-    /// SSH key creation date
-    #[serde(rename = "created", skip_serializing_if = "Option::is_none")]
-    pub created: Option<String>,
-    /// SSH key name
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
-    /// SSH public key
-    #[serde(rename = "pub", skip_serializing_if = "Option::is_none")]
-    pub r#pub: Option<String>,
-    /// SSH key algorithm
-    #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
-    pub r#type: Option<Type>,
-    /// SSH key description
-    #[serde(rename = "comment", skip_serializing_if = "Option::is_none")]
-    pub comment: Option<String>,
 }
 
-impl SsHkey {
-    pub fn new() -> SsHkey {
-        SsHkey {
+impl SshkeyPost200Response {
+    pub fn new() -> SshkeyPost200Response {
+        SshkeyPost200Response {
             id: None,
-            account: None,
-            created: None,
-            name: None,
-            r#pub: None,
-            r#type: None,
-            comment: None,
         }
     }
 }
 
-/// SSH key algorithm
-#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum Type {
-    #[serde(rename = "rsa")]
-    Rsa,
-    #[serde(rename = "dsa")]
-    Dsa,
-    #[serde(rename = "ecdsa")]
-    Ecdsa,
-    #[serde(rename = "ed25519")]
-    Ed25519,
-}
-
-impl Default for Type {
-    fn default() -> Type {
-        Self::Rsa
-    }
-}
 

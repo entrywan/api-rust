@@ -94,7 +94,7 @@ pub mod cluster_api;
 pub mod firewall_api;
 pub mod instance_api;
 pub mod load_balancer_api;
-pub mod ss_hkey_api;
+pub mod sshkey_api;
 pub mod tag_api;
 pub mod vpc_api;
 

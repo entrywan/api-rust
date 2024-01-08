@@ -114,7 +114,7 @@ pub async fn loadbalancer_id_delete(configuration: &configuration::Configuration
     }
 }
 
-pub async fn loadbalancer_id_put(configuration: &configuration::Configuration, id: &str) -> Result<(), Error<LoadbalancerIdPutError>> {
+pub async fn loadbalancer_id_put(configuration: &configuration::Configuration, id: &str, loadbalancer_id_put_request: crate::models::LoadbalancerIdPutRequest) -> Result<(), Error<LoadbalancerIdPutError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
@@ -128,6 +128,7 @@ pub async fn loadbalancer_id_put(configuration: &configuration::Configuration, i
     if let Some(ref local_var_token) = local_var_configuration.bearer_access_token {
         local_var_req_builder = local_var_req_builder.bearer_auth(local_var_token.to_owned());
     };
+    local_var_req_builder = local_var_req_builder.json(&loadbalancer_id_put_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
